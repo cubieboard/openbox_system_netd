@@ -46,6 +46,10 @@ ifeq ($(BOARD_HAVE_BLUETOOTH),true)
   LOCAL_CFLAGS := $(LOCAL_CFLAGS) -DHAVE_BLUETOOTH
 endif
 
+ifeq ($(BOARD_WIFI_VENDOR), realtek)
+	LOCAL_CFLAGS += -DRTL_WIFI_VENDOR
+endif
+
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
